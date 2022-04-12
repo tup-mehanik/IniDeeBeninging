@@ -85,7 +85,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Moderator_Form";
-            this.Text = "Moderator_Form";
+            this.Text = "Модератор";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

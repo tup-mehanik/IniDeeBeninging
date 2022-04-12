@@ -94,7 +94,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Moderator_Search_Form";
-            this.Text = "Moderator_Search_Form";
+            this.Text = "Модератор_Търсене на ученик или фирма";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
