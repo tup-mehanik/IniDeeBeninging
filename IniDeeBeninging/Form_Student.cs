@@ -37,23 +37,9 @@ namespace IniDeeBeninging
                 //        //Addres = ad.Addres.
 
                 //    }).ToList();
-               /* var ad = ctx.AddressesEmployers
-                    .Include(ae => ae.Advertisements)
-                    .ThenInclude(p => p.Position)
-                    .Include(e => e.Employer)
-                    .ThenInclude(c => c.Contact)
-                    .Select(s => new
-                    {
-                        
-                        Address = s.Address,
-                        Employer = s.Employer.EmployerName,
-                        Contact = s.Employer.Contact.FirstName + s.Employer.Contact.MiddleName + s.Employer.Contact.Surname
-                    })*/
 
                 var adv = ctx.Advertisements
-                   // .Include(ade => ade.Address)
-                   // .ThenInclude(e => e.Employer)
-                    //.ThenInclude(c => c.Contact)
+                 
                     .Select(s => new
                     {
                         ID = s.Id,
@@ -70,19 +56,25 @@ namespace IniDeeBeninging
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Student_ID = Int32.Parse(textBox1.Text);
-            using ( var ctx = new yah_ini_deeContext() )
+            
+            if (textBox1.Text=="") MessageBox.Show("Ай да въведеш ино число:)");
+            else
             {
-                var appliations = ctx.Applications.Where(apl => apl.StudentId == Student_ID)
-                    .Select(s => new
-                    {
-                        StudentId = s.StudentId,
-                        EmployerName = s.Adverts.Address.Employer.EmployerName,
-                        Position = s.Adverts.Position.PositionName,
-                        Salary = s.Adverts.Salary
-                    }).ToList();
-                dataGridView1.DataSource = appliations;
+                Student_ID = Int32.Parse(textBox1.Text);
+                using (var ctx = new yah_ini_deeContext())
+                {
+                    var appliations = ctx.Applications.Where(apl => apl.StudentId == Student_ID)
+                        .Select(s => new
+                        {
+                            StudentId = s.StudentId,
+                            EmployerName = s.Adverts.Address.Employer.EmployerName,
+                            Position = s.Adverts.Position.PositionName,
+                            Salary = s.Adverts.Salary
+                        }).ToList();
+                    dataGridView1.DataSource = appliations;
+                }
             }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
