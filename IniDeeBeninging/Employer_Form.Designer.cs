@@ -36,13 +36,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1091, 29);
+            this.label1.Location = new System.Drawing.Point(1055, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(534, 41);
             this.label1.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1095, 79);
+            this.textBox1.Location = new System.Drawing.Point(1055, 73);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 47);
             this.textBox1.TabIndex = 1;
@@ -116,11 +118,32 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1055, 298);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(560, 98);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "Редактиране на информация за фирмата";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1055, 193);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(560, 86);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Добавяне на обява";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // Employer_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1661, 603);
+            this.ClientSize = new System.Drawing.Size(1644, 603);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -147,5 +170,7 @@
         private Button button3;
         private Button button4;
         private Button button5;
+        private Button button6;
+        private Button button7;
     }
 }

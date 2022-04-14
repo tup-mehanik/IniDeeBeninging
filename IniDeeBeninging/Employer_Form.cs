@@ -122,5 +122,18 @@ namespace IniDeeBeninging
                 this.Show();
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") MessageBox.Show("Ай да въведеш ино число");
+            else
+            {
+                EmpID = Int32.Parse(textBox1.Text);
+                Employer_Redact_Form erf = new Employer_Redact_Form(EmpID);
+                this.Hide();
+                erf.ShowDialog();
+                this.Show();
+            }
+            }
     }
 }
