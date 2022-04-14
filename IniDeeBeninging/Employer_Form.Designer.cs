@@ -136,6 +136,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Добавяне на обява";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Employer_Form
             // 

@@ -134,6 +134,19 @@ namespace IniDeeBeninging
                 erf.ShowDialog();
                 this.Show();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") MessageBox.Show("Ай да въведеш ино число");
+            else
+            {
+                EmpID = Int32.Parse(textBox1.Text);
+                AddAdvcs add = new AddAdvcs(EmpID);
+                this.Hide();
+                add.ShowDialog();
+                this.Show();
             }
+        }
     }
 }
