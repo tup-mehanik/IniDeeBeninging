@@ -19,7 +19,7 @@ namespace IniDeeBeninging
         {
             InitializeComponent();
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             using ( var ctx = new yah_ini_deeContext())
@@ -61,6 +61,12 @@ namespace IniDeeBeninging
             else
             {
                 Student_ID = Int32.Parse(textBox1.Text);
+                var ctx1 = new yah_ini_deeContext();
+                if (ctx1.Students.Where(s => s.Id == Student_ID).FirstOrDefault() == null)
+                {
+                    MessageBox.Show("Не съществува такъв ученик!");
+                    return;
+                }
                 using (var ctx = new yah_ini_deeContext())
                 {
                     var appliations = ctx.Applications.Where(apl => apl.StudentId == Student_ID)
@@ -79,22 +85,33 @@ namespace IniDeeBeninging
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Student_ID = Int32.Parse(textBox1.Text);
-            using ( var ctx = new yah_ini_deeContext() )
+            if (textBox1.Text == "") MessageBox.Show("Ай да въведеш ино число:)");
+            else
             {
-                var GeneralStudentInformation = ctx.Students.Where(s => s.Id == Student_ID)
-                    .Select(s => new
-                    {
-                        Id = s.Id,
-                        Name = s.FirstName + "" + s.MiddleName + " " + s.Surname,
-                        School = s.School.Name,
-                        PhoneNumber = s.Phone,
-                        EGN = s.Egn,
-                        Email = s.Email,
-                        Address = s.Address+", "+s.City.Name
-                    }).ToList() ;
-                dataGridView1.DataSource = GeneralStudentInformation;
+                Student_ID = Int32.Parse(textBox1.Text);
+                var ctx1 = new yah_ini_deeContext();
+                if (ctx1.Students.Where(s => s.Id == Student_ID).FirstOrDefault() == null)
+                {
+                    MessageBox.Show("Не съществува такъв ученик!");
+                    return;
+                }
+                using (var ctx = new yah_ini_deeContext())
+                {
+                    var GeneralStudentInformation = ctx.Students.Where(s => s.Id == Student_ID)
+                        .Select(s => new
+                        {
+                            Id = s.Id,
+                            Name = s.FirstName + "" + s.MiddleName + " " + s.Surname,
+                            School = s.School.Name,
+                            PhoneNumber = s.Phone,
+                            EGN = s.Egn,
+                            Email = s.Email,
+                            Address = s.Address + ", " + s.City.Name
+                        }).ToList();
+                    dataGridView1.DataSource = GeneralStudentInformation;
+                }
             }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -107,10 +124,22 @@ namespace IniDeeBeninging
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Student_Redact_FOrm srf = new Student_Redact_FOrm();
-            this.Hide();
-            srf.ShowDialog();
-            this.Show();
+            if (textBox1.Text == "") MessageBox.Show("Ай да въведеш ино число:)");
+            else
+            {
+                Student_ID=Int32.Parse(textBox1.Text);
+                var ctx1 = new yah_ini_deeContext();
+                if (ctx1.Students.Where(s => s.Id == Student_ID).FirstOrDefault() == null)
+                {
+                    MessageBox.Show("Не съществува такъв ученик!");
+                    return;
+                }
+                Student_Redact_FOrm srf = new Student_Redact_FOrm(Student_ID);
+                this.Hide();
+                srf.ShowDialog();
+                this.Show();
+            }
+                
         }
     }
 }
