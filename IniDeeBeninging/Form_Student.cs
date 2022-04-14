@@ -104,5 +104,13 @@ namespace IniDeeBeninging
             s.ShowDialog();
             this.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Student_Redact_FOrm srf = new Student_Redact_FOrm();
+            this.Hide();
+            srf.ShowDialog();
+            this.Show();
+        }
     }
 }

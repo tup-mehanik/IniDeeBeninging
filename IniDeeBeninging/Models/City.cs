@@ -21,5 +21,10 @@ namespace IniDeeBeninging.Models
         public virtual ICollection<Employer> Employers { get; set; }
         public virtual ICollection<School> Schools { get; set; }
         public virtual ICollection<Student> Students { get; set; }
+
+        public string NameOfCitie()
+        {
+            return Name;
+        }
     }
 }

@@ -18,5 +18,10 @@ namespace IniDeeBeninging.Models
 
         public virtual City City { get; set; } = null!;
         public virtual ICollection<Student> Students { get; set; }
+
+        public string NameOfSchool()
+        {
+            return Name;
+        }
     }
 }
