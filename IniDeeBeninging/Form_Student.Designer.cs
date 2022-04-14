@@ -35,6 +35,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(40, 477);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(588, 58);
+            this.button1.Size = new System.Drawing.Size(609, 58);
             this.button1.TabIndex = 3;
             this.button1.Text = "Всички кандидатури";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,9 +78,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(652, 477);
+            this.button2.Location = new System.Drawing.Point(685, 477);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(586, 58);
+            this.button2.Size = new System.Drawing.Size(629, 58);
             this.button2.TabIndex = 4;
             this.button2.Text = "Всички обяви";
             this.button2.UseVisualStyleBackColor = true;
@@ -87,9 +88,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(34, 558);
+            this.button3.Location = new System.Drawing.Point(40, 558);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(594, 58);
+            this.button3.Size = new System.Drawing.Size(609, 58);
             this.button3.TabIndex = 5;
             this.button3.Text = "Основна информация за мен";
             this.button3.UseVisualStyleBackColor = true;
@@ -97,19 +98,29 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(654, 559);
+            this.button4.Location = new System.Drawing.Point(685, 559);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(584, 57);
+            this.button4.Size = new System.Drawing.Size(629, 57);
             this.button4.TabIndex = 6;
             this.button4.Text = "Търсене на обява по поле на дейност";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(42, 646);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(1272, 60);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Редактиране на данни";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // Form_Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1486, 703);
+            this.ClientSize = new System.Drawing.Size(1354, 743);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -134,5 +145,6 @@
         private Button button2;
         private Button button3;
         private Button button4;
+        private Button button5;
     }
 }
