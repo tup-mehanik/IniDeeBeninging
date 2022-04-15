@@ -130,7 +130,7 @@ namespace IniDeeBeninging
                 Student_ID=Int32.Parse(textBox1.Text);
                 var ctx1 = new yah_ini_deeContext();
                 if (ctx1.Students.Where(s => s.Id == Student_ID).FirstOrDefault() == null)
-                {
+                { 
                     MessageBox.Show("Не съществува такъв ученик!");
                     return;
                 }
@@ -140,6 +140,37 @@ namespace IniDeeBeninging
                 this.Show();
             }
                 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "") MessageBox.Show("Ай да въведеш ино число:)");
+            else
+            {
+                Student_ID = Int32.Parse(textBox1.Text);
+                var ctx = new yah_ini_deeContext();
+                Models.Application appl = new Models.Application();
+                appl.StudentId= Student_ID;
+                int advID;
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("Не сте избрали обява, или не виждате всички свои обяви, за да кандидатствате");
+                    return;
+                }
+                advID = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                appl.AdvertsId = advID;
+                if(ctx.Applications.Where(s => (s.StudentId==appl.StudentId && s.AdvertsId==appl.AdvertsId)).FirstOrDefault()!=null)
+                {
+                    MessageBox.Show("Вече сте кандидатствали за тази обява!");
+                }
+                else
+                {
+                    ctx.Applications.Add(appl);
+                    MessageBox.Show("Успешно кандидатствахте за избраната обява ");
+                    ctx.SaveChanges();
+                }
+                
+            }
         }
     }
 }
