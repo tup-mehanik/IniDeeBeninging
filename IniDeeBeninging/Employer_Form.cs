@@ -155,6 +155,11 @@ namespace IniDeeBeninging
             DialogResult dR = MessageBox.Show("Сигурни ли сте, че искате да изтриете избраната обява?", "Предупреждение", MessageBoxButtons.YesNo);
             if (dR == DialogResult.Yes)
             {
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("Не сте избрали обява, или не виждате всички свои обяви, за да триете");
+                    return;
+                }
                 int idd = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 using (var ctx = new yah_ini_deeContext())
                 {

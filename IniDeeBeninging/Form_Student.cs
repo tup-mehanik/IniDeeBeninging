@@ -101,7 +101,7 @@ namespace IniDeeBeninging
                         .Select(s => new
                         {
                             Id = s.Id,
-                            Name = s.FirstName + "" + s.MiddleName + " " + s.Surname,
+                            Name = s.FirstName + " " + s.MiddleName + " " + s.Surname,
                             School = s.School.Name,
                             PhoneNumber = s.Phone,
                             EGN = s.Egn,
