@@ -55,6 +55,7 @@ namespace IniDeeBeninging
                     var alladv = ctx.Advertisements.Where(s => s.Address.EmployerId == EmpID)
                         .Select(s => new
                         {
+                            ID = s.Id,
                             Position = s.Position.PositionName,
                             Salary = s.Salary,
                             Аffiliate = String.Format("{0}, {1} {2}", s.Address.Address, s.Address.City.Name, s.Address.City.PostalCode),
@@ -146,6 +147,32 @@ namespace IniDeeBeninging
                 this.Hide();
                 add.ShowDialog();
                 this.Show();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DialogResult dR = MessageBox.Show("Сигурни ли сте, че искате да изтриете избраната обява?", "Предупреждение", MessageBoxButtons.YesNo);
+            if (dR == DialogResult.Yes)
+            {
+                int idd = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                using (var ctx = new yah_ini_deeContext())
+                {
+                    Advertisement adtor = ctx.Advertisements.Where(s => s.Id == idd).FirstOrDefault();
+                    ctx.Advertisements.Remove(adtor);
+                    ctx.SaveChanges();
+
+                    var alladv = ctx.Advertisements.Where(s => s.Address.EmployerId == EmpID)
+                        .Select(s => new
+                        {
+                            ID = s.Id,
+                            Position = s.Position.PositionName,
+                            Salary = s.Salary,
+                            Аffiliate = String.Format("{0}, {1} {2}", s.Address.Address, s.Address.City.Name, s.Address.City.PostalCode),
+                            Contrac = s.Contract.Type
+                        }).ToList();
+                    dataGridView1.DataSource = alladv;
+                }
             }
         }
     }

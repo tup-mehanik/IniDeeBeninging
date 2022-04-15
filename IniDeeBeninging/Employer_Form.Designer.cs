@@ -38,13 +38,14 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1055, 29);
+            this.label1.Location = new System.Drawing.Point(1330, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(534, 41);
             this.label1.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1055, 73);
+            this.textBox1.Location = new System.Drawing.Point(1330, 87);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 47);
             this.textBox1.TabIndex = 1;
@@ -65,14 +66,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 102;
             this.dataGridView1.RowTemplate.Height = 49;
-            this.dataGridView1.Size = new System.Drawing.Size(1010, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(1275, 443);
             this.dataGridView1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(21, 431);
+            this.button1.Location = new System.Drawing.Point(24, 505);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(502, 56);
+            this.button1.Size = new System.Drawing.Size(591, 56);
             this.button1.TabIndex = 3;
             this.button1.Text = "Всички кандидати";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,7 +81,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(563, 431);
+            this.button2.Location = new System.Drawing.Point(642, 505);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(655, 56);
             this.button2.TabIndex = 4;
@@ -90,9 +91,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(23, 512);
+            this.button3.Location = new System.Drawing.Point(26, 586);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(500, 58);
+            this.button3.Size = new System.Drawing.Size(589, 58);
             this.button3.TabIndex = 5;
             this.button3.Text = "Адреси на всички филиали";
             this.button3.UseVisualStyleBackColor = true;
@@ -100,7 +101,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(566, 507);
+            this.button4.Location = new System.Drawing.Point(642, 581);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(652, 58);
             this.button4.TabIndex = 6;
@@ -110,9 +111,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1245, 431);
+            this.button5.Location = new System.Drawing.Point(1330, 505);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(370, 139);
+            this.button5.Size = new System.Drawing.Size(560, 134);
             this.button5.TabIndex = 7;
             this.button5.Text = "Търсене на кандидат по име";
             this.button5.UseVisualStyleBackColor = true;
@@ -120,7 +121,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1055, 298);
+            this.button6.Location = new System.Drawing.Point(1330, 258);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(560, 98);
             this.button6.TabIndex = 8;
@@ -130,7 +131,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1055, 193);
+            this.button7.Location = new System.Drawing.Point(1330, 151);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(560, 86);
             this.button7.TabIndex = 9;
@@ -138,11 +139,22 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(1330, 371);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(560, 97);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "Изтриване на маркираната обява";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Employer_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1644, 603);
+            this.ClientSize = new System.Drawing.Size(1911, 675);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -173,5 +185,6 @@
         private Button button5;
         private Button button6;
         private Button button7;
+        private Button button8;
     }
 }

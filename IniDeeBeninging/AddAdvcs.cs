@@ -44,6 +44,7 @@ namespace IniDeeBeninging
                 comboBox2.SelectedItem = null;
                 comboBox3.SelectedItem = null;
                 comboBox4.SelectedItem = null;
+                textBox1.Text = ctx.Advertisements.Where(s => s.Id == EMPID).Select(s => s.IsValid).ToString();
             }
             
         }
@@ -75,11 +76,20 @@ namespace IniDeeBeninging
                     adv.ContractId=ctx.ContractTypes.Where(s => s.Type==contr).Select(s => s.Id).FirstOrDefault();
                     adv.PostDate = DateTime.Today;
                     adv.Salary = salary;
+                    adv.IsValid = Encoding.ASCII.GetBytes("1");
+                    
                     ctx.Advertisements.Add(adv);
                     ctx.SaveChanges();
+                    MessageBox.Show("Обявата е добавена успешно");
+                    this.Close();
                 }
             }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
