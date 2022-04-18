@@ -95,6 +95,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Ini Dee Beninging";
             this.Load += new System.EventHandler(this.Form1_Load);

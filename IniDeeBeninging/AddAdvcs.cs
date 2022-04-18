@@ -44,7 +44,6 @@ namespace IniDeeBeninging
                 comboBox2.SelectedItem = null;
                 comboBox3.SelectedItem = null;
                 comboBox4.SelectedItem = null;
-                textBox1.Text = ctx.Advertisements.Where(s => s.Id == EMPID).Select(s => s.IsValid).ToString();
             }
             
         }

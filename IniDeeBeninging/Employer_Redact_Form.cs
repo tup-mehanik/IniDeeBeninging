@@ -76,7 +76,7 @@ namespace IniDeeBeninging
 
                 cp.FirstName = textBox9.Text;
                 cp.MiddleName = textBox8.Text;
-                cp.FirstName = textBox7.Text;
+                cp.Surname = textBox7.Text;
                 cp.Email = textBox6.Text;
                 cp.Phone = textBox5.Text;
 
