@@ -72,6 +72,7 @@ namespace IniDeeBeninging
                     var appliations = ctx.Applications.Where(apl => apl.StudentId == Student_ID)
                         .Select(s => new
                         {
+                            ID = s.Id,
                             StudentId = s.StudentId,
                             EmployerName = s.Adverts.Address.Employer.EmployerName,
                             Position = s.Adverts.Position.PositionName,
@@ -167,10 +168,55 @@ namespace IniDeeBeninging
                 {
                     ctx.Applications.Add(appl);
                     MessageBox.Show("Успешно кандидатствахте за избраната обява ");
+                    
+                    
+                    
+                    
                     ctx.SaveChanges();
+
+                    var appliations = ctx.Applications.Where(apl => apl.StudentId == Student_ID)
+                        .Select(s => new
+                        {
+                            ID = s.Id,
+                            StudentId = s.StudentId,
+                            EmployerName = s.Adverts.Address.Employer.EmployerName,
+                            Position = s.Adverts.Position.PositionName,
+                            Salary = s.Adverts.Salary
+                        }).ToList();
+                    dataGridView1.DataSource = appliations;
+
                 }
                 
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var ctx = new yah_ini_deeContext();
+            int applid;
+            if (dataGridView1.CurrentRow.Cells[0].Value != null)applid = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            else
+            {
+                MessageBox.Show("Не сте избрали апликация, която да изтриете, или не виждате апликациите");
+                return;
+            }
+            Models.Application appltodel = ctx.Applications.Where(s => s.Id==applid).FirstOrDefault();
+            ctx.Applications.Remove(appltodel);
+            ctx.SaveChanges();
+            MessageBox.Show("Избраната обява е изтрита");
+
+
+            var appliations = ctx.Applications.Where(apl => apl.StudentId == Student_ID)
+                        .Select(s => new
+                        {
+                            ID = s.Id,
+                            StudentId = s.StudentId,
+                            EmployerName = s.Adverts.Address.Employer.EmployerName,
+                            Position = s.Adverts.Position.PositionName,
+                            Salary = s.Adverts.Salary
+                        }).ToList();
+            dataGridView1.DataSource = appliations;
+
         }
     }
 }
