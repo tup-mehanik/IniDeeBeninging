@@ -46,6 +46,8 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -217,12 +219,32 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Промяна на данни";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label10.Location = new System.Drawing.Point(185, 531);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(131, 46);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Адрес: ";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(322, 528);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(925, 52);
+            this.textBox7.TabIndex = 19;
+            // 
             // Student_Redact_FOrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(1409, 930);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox6);
@@ -271,5 +293,7 @@
         private TextBox textBox6;
         private Button button1;
         private Label label9;
+        private Label label10;
+        private TextBox textBox7;
     }
 }

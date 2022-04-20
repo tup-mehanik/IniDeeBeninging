@@ -138,6 +138,28 @@ namespace IniDeeBeninging
                 Student_Redact_FOrm srf = new Student_Redact_FOrm(Student_ID);
                 this.Hide();
                 srf.ShowDialog();
+                Student_ID = Int32.Parse(textBox1.Text);
+                //var ctx1 = new yah_ini_deeContext();
+                if (ctx1.Students.Where(s => s.Id == Student_ID).FirstOrDefault() == null)
+                {
+                    MessageBox.Show("Не съществува такъв ученик!");
+                    return;
+                }
+                using (var ctx = new yah_ini_deeContext())
+                {
+                    var GeneralStudentInformation = ctx.Students.Where(s => s.Id == Student_ID)
+                        .Select(s => new
+                        {
+                            Id = s.Id,
+                            Name = s.FirstName + " " + s.MiddleName + " " + s.Surname,
+                            School = s.School.Name,
+                            PhoneNumber = s.Phone,
+                            EGN = s.Egn,
+                            Email = s.Email,
+                            Address = s.Address + ", " + s.City.Name
+                        }).ToList();
+                    dataGridView1.DataSource = GeneralStudentInformation;
+                }
                 this.Show();
             }
                 
@@ -153,9 +175,15 @@ namespace IniDeeBeninging
                 Models.Application appl = new Models.Application();
                 appl.StudentId= Student_ID;
                 int advID;
-                if (dataGridView1.CurrentRow == null)
+
+                if (dataGridView1.CurrentRow == null )
                 {
                     MessageBox.Show("Не сте избрали обява, или не виждате всички свои обяви, за да кандидатствате");
+                    return;
+                }
+                if(ctx.Fields.Where(s => s.Name==dataGridView1.CurrentRow.Cells[1].Value.ToString()).FirstOrDefault()==null)
+                {
+                    MessageBox.Show("Моля отворете обявите, за да можете да кандидатствате");
                     return;
                 }
                 advID = Int32.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
@@ -194,16 +222,21 @@ namespace IniDeeBeninging
         {
             var ctx = new yah_ini_deeContext();
             int applid;
-            if (dataGridView1.CurrentRow.Cells[0].Value != null)applid = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            if (dataGridView1.CurrentRow.Cells[0].Value != null) applid = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             else
             {
                 MessageBox.Show("Не сте избрали апликация, която да изтриете, или не виждате апликациите");
                 return;
             }
+            if(ctx.Applications.Where(s => s.StudentId.ToString()==dataGridView1.CurrentRow.Cells[1].Value.ToString()).FirstOrDefault()==null)
+            {
+                MessageBox.Show("Не виждате апликациите си, за да триете. Моля отворете страницата с кандидатури, за да изтриете някоя");
+                return;
+            }
             Models.Application appltodel = ctx.Applications.Where(s => s.Id==applid).FirstOrDefault();
             ctx.Applications.Remove(appltodel);
             ctx.SaveChanges();
-            MessageBox.Show("Избраната обява е изтрита");
+            MessageBox.Show("Избраната кандидатура е изтрита");
 
 
             var appliations = ctx.Applications.Where(apl => apl.StudentId == Student_ID)

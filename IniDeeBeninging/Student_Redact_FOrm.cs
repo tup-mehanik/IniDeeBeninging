@@ -40,6 +40,7 @@ namespace IniDeeBeninging
                 textBox4.Text = st.Egn;
                 textBox5.Text = st.Phone;
                 textBox6.Text = st.Email;
+                textBox7.Text = st.Address;
                 comboBox1.SelectedItem = st.City.Name;
                 comboBox2.SelectedItem = st.School.Name;
             }
@@ -56,6 +57,7 @@ namespace IniDeeBeninging
                 st.Egn = textBox4.Text;
                 st.Phone = textBox5.Text;
                 st.Email = textBox6.Text;
+                st.Address = textBox7.Text;
                 City city = ctx.Cities.Where(s => s.Name == comboBox1.SelectedItem).FirstOrDefault();
                 School school = ctx.Schools.Where(s => s.Name == comboBox2.SelectedItem ).FirstOrDefault();
                 st.School = school;
