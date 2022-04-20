@@ -242,6 +242,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MinimizeBox = false;
             this.Name = "Student_Redact_FOrm";
             this.Text = "Промяна на данни на ученик";
             this.Load += new System.EventHandler(this.Student_Redact_FOrm_Load);

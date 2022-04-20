@@ -44,35 +44,37 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 39);
+            this.dataGridView1.Location = new System.Drawing.Point(84, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 102;
             this.dataGridView1.RowTemplate.Height = 49;
-            this.dataGridView1.Size = new System.Drawing.Size(1034, 409);
+            this.dataGridView1.Size = new System.Drawing.Size(1179, 489);
             this.dataGridView1.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1092, 98);
+            this.textBox1.Location = new System.Drawing.Point(1368, 135);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(338, 47);
+            this.textBox1.Size = new System.Drawing.Size(218, 52);
             this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1092, 33);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(1348, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 41);
+            this.label1.Size = new System.Drawing.Size(251, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ученик номер:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(40, 477);
+            this.button1.Location = new System.Drawing.Point(84, 579);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(680, 58);
+            this.button1.Size = new System.Drawing.Size(773, 64);
             this.button1.TabIndex = 3;
             this.button1.Text = "Всички кандидатури";
             this.button1.UseVisualStyleBackColor = true;
@@ -80,9 +82,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(765, 477);
+            this.button2.Location = new System.Drawing.Point(900, 579);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(665, 58);
+            this.button2.Size = new System.Drawing.Size(752, 64);
             this.button2.TabIndex = 4;
             this.button2.Text = "Всички обяви";
             this.button2.UseVisualStyleBackColor = true;
@@ -90,9 +92,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(40, 558);
+            this.button3.Location = new System.Drawing.Point(84, 667);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(680, 58);
+            this.button3.Size = new System.Drawing.Size(773, 64);
             this.button3.TabIndex = 5;
             this.button3.Text = "Основна информация за мен";
             this.button3.UseVisualStyleBackColor = true;
@@ -100,9 +102,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(765, 559);
+            this.button4.Location = new System.Drawing.Point(900, 669);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(665, 57);
+            this.button4.Size = new System.Drawing.Size(752, 63);
             this.button4.TabIndex = 6;
             this.button4.Text = "Търсене на обява по поле на дейност";
             this.button4.UseVisualStyleBackColor = true;
@@ -110,9 +112,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(42, 646);
+            this.button5.Location = new System.Drawing.Point(84, 764);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(1388, 60);
+            this.button5.Size = new System.Drawing.Size(1568, 66);
             this.button5.TabIndex = 7;
             this.button5.Text = "Редактиране на данни";
             this.button5.UseVisualStyleBackColor = true;
@@ -120,9 +122,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(1088, 345);
+            this.button6.Location = new System.Drawing.Point(1294, 434);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(342, 103);
+            this.button6.Size = new System.Drawing.Size(358, 113);
             this.button6.TabIndex = 8;
             this.button6.Text = "Кандидатствай за маркираната обява";
             this.button6.UseVisualStyleBackColor = true;
@@ -130,9 +132,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(1088, 212);
+            this.button7.Location = new System.Drawing.Point(1294, 288);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(342, 110);
+            this.button7.Size = new System.Drawing.Size(358, 121);
             this.button7.TabIndex = 9;
             this.button7.Text = "Изтрий кандидатура";
             this.button7.UseVisualStyleBackColor = true;
@@ -140,9 +142,10 @@
             // 
             // Form_Student
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1482, 743);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
+            this.ClientSize = new System.Drawing.Size(1721, 891);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -153,6 +156,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(43)))), ((int)(((byte)(54)))));
+            this.MaximizeBox = false;
             this.Name = "Form_Student";
             this.Text = "Ученик";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
