@@ -146,12 +146,39 @@ namespace IniDeeBeninging
                 AddAdvcs add = new AddAdvcs(EmpID);
                 this.Hide();
                 add.ShowDialog();
+                using (var ctx = new yah_ini_deeContext())
+                {
+                    EmpID = Int32.Parse(textBox1.Text);
+                    var alladv = ctx.Advertisements.Where(s => s.Address.EmployerId == EmpID)
+                        .Select(s => new
+                        {
+                            ID = s.Id,
+                            Position = s.Position.PositionName,
+                            Salary = s.Salary,
+                            Аffiliate = String.Format("{0}, {1} {2}", s.Address.Address, s.Address.City.Name, s.Address.City.PostalCode),
+                            Contrac = s.Contract.Type
+                        }).ToList();
+                    dataGridView1.DataSource = alladv;
+                }
                 this.Show();
             }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            using ( var ctx = new yah_ini_deeContext())
+            {
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("Не сте избрали обява, или не виждате всички свои обяви, за да триете");
+                    return;
+                }
+                if(ctx.Positions.Where(s => s.PositionName==dataGridView1.CurrentRow.Cells[1].ToString()).FirstOrDefault()==null)
+                {
+                    MessageBox.Show("В момента не виждате обявите, за да триете. Mоля отворете обявите си, за да може да триете!");
+                    return;
+                }
+            }
             DialogResult dR = MessageBox.Show("Сигурни ли сте, че искате да изтриете избраната обява?", "Предупреждение", MessageBoxButtons.YesNo);
             if (dR == DialogResult.Yes)
             {

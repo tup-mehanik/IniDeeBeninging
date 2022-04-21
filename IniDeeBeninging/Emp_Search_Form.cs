@@ -32,12 +32,14 @@ namespace IniDeeBeninging
                 using ( var ctx = new yah_ini_deeContext() )
                 {
                     var cand = ctx.Applications.Where(s => s.Adverts.Address.EmployerId ==Emp_Id && (s.Student.FirstName+" "+s.Student.MiddleName+" "+s.Student.Surname).ToLower().Contains(name.ToLower())).
+                    OrderBy(s => s.Student.FirstName).
                     Select ( s => new
                     {
                         Name = String.Format("{0} {1} {2}",s.Student.FirstName, s.Student.MiddleName, s.Student.Surname),
                         Phone = s.Student.Phone,
                         School = s.Student.School.Name,
-                        Email = s.Student.Email
+                        Email = s.Student.Email,
+                        Position = s.Adverts.Position.PositionName
                     }).ToList();
                     dataGridView1.DataSource = cand;
                 }
